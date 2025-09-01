@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>WebPortfolio Maker — Student</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- ===== NAV ===== -->
+  <nav>
+    <div class="logo" aria-hidden="true">WebPortfolio</div>
+
+    <ul class="nav-links" role="menubar" aria-label="Primary navigation">
+      <li><a href="#about" role="menuitem">About Me</a></li>
+      <li><a href="#skills" role="menuitem">Skills</a></li>
+      <li><a href="#projects" role="menuitem">Projects</a></li>
+      <li><a href="#resumeSection" role="menuitem">Resume</a></li>
+      <li><a href="#contact" role="menuitem">Contact / Links</a></li>
+    </ul>
+
+    <div class="toolbar" role="toolbar" aria-label="Site controls">
+      <button id="darkModeToggle" class="menu-btn" aria-pressed="false" aria-label="Toggle dark or light mode">🌙</button>
+      <input id="projectSearch" aria-label="Quick project filter" placeholder="Quick search projects..." />
+      <button id="menuToggle" class="menu-btn" aria-expanded="false" aria-controls="primaryNav" title="Toggle menu">☰</button>
+    </div>
+  </nav>
+
+  <main>
+    <!-- ===== HOME ===== -->
+    <section id="home" aria-labelledby="homeTitle">
+      <div class="intro">
+        <h1 id="homeTitle">Hi, I'm ketan Wani 👋</h1>
+        <p style="padding-bottom: 20px;">An aspiring developer building useful things while learning web technologies. This portfolio showcases projects, skills, resume and ways to contact me.</p>
+        <a href="#projects" class="btn">View My Work</a>
+      </div>
+    </section>
+
+    <!-- ===== ABOUT ===== -->
+    <section id="about" aria-labelledby="aboutTitle">
+      <h2 id="aboutTitle">About Me</h2>
+      <p>I enjoy building front-end apps and learning modern tools. My goals: ship quality projects, contribute to open source, and grow as a developer.</p>
+    </section>
+
+    <!-- ===== SKILLS ===== -->
+    <section id="skills" aria-labelledby="skillsTitle">
+      <h2 id="skillsTitle">Skills</h2>
+      <div class="skills" aria-live="polite">
+        <div class="skill-box" role="img" aria-label="HTML - 90 percent">
+          <div class="skill-title">HTML</div>
+          <div class="progress-bar"><div class="progress" style="width:90%"></div></div>
+        </div>
+        <div class="skill-box" role="img" aria-label="CSS - 80 percent">
+          <div class="skill-title">CSS</div>
+          <div class="progress-bar"><div class="progress" style="width:80%"></div></div>
+        </div>
+        <div class="skill-box" role="img" aria-label="JavaScript - 75 percent">
+          <div class="skill-title">JavaScript</div>
+          <div class="progress-bar"><div class="progress" style="width:75%"></div></div>
+        </div>
+        <div class="skill-box" role="img" aria-label="Communication - 85 percent">
+          <div class="skill-title">Communication</div>
+          <div class="progress-bar"><div class="progress" style="width:85%"></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PROJECTS ===== -->
+    <section id="projects" aria-labelledby="projectsTitle">
+      <h2 id="projectsTitle">Projects</h2>
+
+      <div class="filter" role="search">
+        <input id="projectFilter" type="text" placeholder="Type to filter by title or tags..." />
+        <button id="clearFilter" type="button">Clear</button>
+      </div>
+      
+
+      <div class="projects" id="projectGrid" aria-live="polite">
+        <article class="project-card" data-tags="portfolio,html,css,js">
+          <img src="images/image1.jpg" alt="Screenshot of portfolio project" />
+          <div class="content">
+            <h3>Portfolio Website</h3>
+            <p>A responsive personal portfolio showcasing skills and projects.</p>
+            <small>Tags: portfolio, html, css, js</small>
+          </div>
+        </article>
+
+        <article class="project-card" data-tags="todo,productivity,vanilla-js">
+          <img src="images/Image2.jpg" alt="Screenshot of todo app" />
+          <div class="content">
+            <h3>Todo App</h3>
+            <p>A simple task manager built with vanilla JavaScript and LocalStorage.</p>
+            <small>Tags: todo, productivity</small>
+          </div>
+        </article>
+
+        <article class="project-card" data-tags="api,github,fetch">
+          <img src="images/image3.jpg" alt="Screenshot of GitHub explorer" />
+          <div class="content">
+            <h3>GitHub Explorer</h3>
+            <p>Browse repositories and issues using the GitHub API (client-side demo).</p>
+            <small>Tags: api, github, fetch</small>
+          </div>
+        </article>
+      </div>
+    </section>
+
+  <!-- ===== RESUME ===== -->
+<section id="resumeSection" aria-labelledby="resumeTitle" class="resume-section">
+  <h2 id="resumeTitle">Resume</h2>
+  <p>Upload your resume (PDF) to enable the download button for reviewers.</p>
+
+  <label for="resumeUpload" class="upload-box">
+    <span>📄 Choose PDF File</span>
+    <input id="resumeUpload" type="file" accept="application/pdf" hidden />
+  </label>
+
+  <div class="resume-actions">
+    <a id="resumeLink" class="btn disabled" href="#" download>No file uploaded</a>
+  </div>
+
+  <small id="resumeHint">No file uploaded yet.</small>
+</section>
+
+    <!-- ===== CONTACT ===== -->
+    <section id="contact" aria-labelledby="contactTitle">
+      <h2 id="contactTitle">Contact / Important Links</h2>
+
+      <form id="contactForm" novalidate>
+        <label for="name">Name</label>
+        <input id="name" type="text" placeholder="Your full name" required />
+
+        <label for="email">Email</label>
+        <input id="email" type="email" placeholder="you@example.com" required />
+        <label for="message">Message</label>
+        <textarea id="message" placeholder="Write your message..." required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+
+      <div id="counter">Visitors: <span id="visitorCounter">0</span></div>
+
+      <div class="links">
+        <p>Important links:</p>
+        <a href="https://github.com/ketan281104/">GitHub</a> •
+        <a href="https://www.linkedin.com/in/ketan-wani-a3a790325/">LinkedIn</a> •
+      </div>
+    </section>
+
+    <!-- Developer test results -->
+    <div id="testResults" class="pass"></div>
+  </main>
+
+  <footer>
+    <small>© <span id="year"></span> WebPortfolio Maker. Built with ❤️ using HTML, CSS & JavaScript.</small>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+</body>
+</html>
